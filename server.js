@@ -12,7 +12,6 @@ const client = new Client({
     intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages]
 });
 
-// Helper function to count stock from text files
 function getStockCount(filename) {
     try {
         const filePath = path.join(__dirname, 'stock', filename);
@@ -24,7 +23,6 @@ function getStockCount(filename) {
     }
 }
 
-// API to get stock data
 app.get('/api/stock', (req, res) => {
     const stock = [
         { service: 'Crunchyroll', count: getStockCount('crunchyroll.txt'), tier: 'FREE', color: '#FF8C00' },
@@ -34,10 +32,10 @@ app.get('/api/stock', (req, res) => {
     res.json(stock);
 });
 
-// Bot Login using Environment Variable (Safe)
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
+// এই লাইনটি আপনার রেলওয়ে ভেরিয়েবল থেকে টোকেন টানবে
 client.login(process.env.DISCORD_TOKEN); 
 
 client.once('ready', () => {
