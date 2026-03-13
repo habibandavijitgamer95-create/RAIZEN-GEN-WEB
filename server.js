@@ -36,7 +36,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 // এই লাইনটি আপনার রেলওয়ে ভেরিয়েবল থেকে টোকেন টানবে
-client.login(process.env.DISCORD_TOKEN); 
+client.login(process.env.MTQ3MDg1NjMyOTM5OTg5NDA5OQ.GcT18i.XI6lGW0tRURfrRcofE-fXb22efD-n1MBOtjTr8); 
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
